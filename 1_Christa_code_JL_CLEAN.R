@@ -291,7 +291,6 @@ levene_test_pred_dat <- pred_dat %>%
 # post-hoc tests
 
 # linear discriminant analysis (LDA)
-# not sure if possible to do this with multiple grouping variables? Is MDA an option here???????
 
 # split data into groups
 pred_dat_split <- pred_dat %>% 
@@ -470,12 +469,7 @@ bobcat_SSM_md <- pred_dat_split[[8]][,4:5] %>%
   mahalanobis_distance() %>%
   filter(is.outlier == TRUE)
 
-# outliers have been removed from the dataset at a whole because we don't have the datapoints she cited in the text in the data; 
 # note that mahalanobis_distance() does not appear to work on grouped data
-
-# NOTE THAT CHRISTA HAS HARE STABLE ISOTOPE DATA BUT WAS NOT INCLUDED IN THE FILE TRANSFER - 
-# COULD BE LOCATED IN "C:/Users/Christa/Google Drive/UofM/RFiles" OF LAPTOP OR "C:/Users/Schmorb/Google Drive/UofM/RFiles" OF DESKTOP
-# SHOUDLD ALSO HAVE ISOTOPE DATA FOR RED SQUIRRELS
 
 
 # 4C - OBJECTIVE #3 -----
@@ -627,9 +621,6 @@ land_cols <- hcl.colors(n=4, palette = 'Earth')
 ggsave('Fig0_map.tiff', map, dpi = 500, width = 7, height = 3, units = 'in')
 ggsave('Fig0_map_large.tiff', map, dpi = 500, width = 14, height = 4, units = 'in')
 
-
-# centroids in this context are the coordinates of the center of polygon defined by the outermost points for each region
-# (presumably including both bobcat and lynx for each region)
 
 
 
